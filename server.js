@@ -8,6 +8,8 @@ hbs.registerPartials(__dirname+'/views/partials');
 hbs.registerHelper('getCurrentYear', ()=>{
   return new Date().getFullYear();
 });
+
+
 console.log("Starting");
 var app = express();
 app.set('view engine', 'hbs');
@@ -41,6 +43,12 @@ app.get('/content',(req,res)=>{
    res.render('content.hbs',{
      pageTitle:'CONTENT'
 
+   })
+});
+
+app.get('/project',(req,res)=>{
+   res.render('project.hbs',{
+     pageTitle:'PROJECT'
    })
 });
 app.listen(port);
